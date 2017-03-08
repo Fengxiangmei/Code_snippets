@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//进入动画
+GroupDetailViewController *oneController = [[self storyboard]instantiateViewControllerWithIdentifier:@"personinfo"];
+            oneController.personId = self.personId;
+            oneController.from =[NSNumber numberWithInt:1];
+            //  从下面往上推效果
+            CATransition *tration = [CATransition animation];
+            tration.duration =0.2f;
+            tration.type = kCATransitionMoveIn;
+            tration.subtype = kCATransitionFromTop;
+            [self.navigationController.view.layer addAnimation:tration forKey:nil];
+            [[self navigationController] pushViewController:oneController animated:NO];
+
+
+//返回动画
+CATransition *transition = [CATransition animation];
+transition.duration =0.2f;
+transition.type = kCATransitionReveal;
+transition.subtype = kCATransitionFromBottom;
+[self.navigationController.view.layer addAnimation:transition forKey:nil];
+
+UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+UserSettingViewController *oneController = [storyboard instantiateViewControllerWithIdentifier:@"usersetting"];
+[self.navigationController pushViewController:oneController animated:NO];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C264F784-47B6-4574-AE65-6C5E48E1AB97</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>视图跳转动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>transition</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
